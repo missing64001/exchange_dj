@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "F:\mygit\python\exchange_dj\index\api\api.py", line 49, in inn
+    data = fun(*args,**kw)
+  File "F:\mygit\python\exchange_dj\index\api\ok\ok_api.py", line 61, in trades
+    data = self.okcoinSpot.trades(symbol,since)
+  File "F:\mygit\python\exchange_dj\index\api\ok\OkcoinSpotAPI.py", line 37, in trades
+    return httpGet(self.__url,TRADES_RESOURCE,params)
+  File "F:\mygit\python\exchange_dj\index\api\ok\HttpMD5Util.py", line 26, in httpGet
+    return json.loads(data)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\json\__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\json\decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\json\decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

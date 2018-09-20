@@ -1,0 +1,18 @@
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python:
+*.py[cod]
+*.pyc
+*.so
+*.egg
+*.egg-info
+dist
+build
+
+# My configurations:
+db.ini
+/python/w01_exchange/err
+/python/exchange_dj/index/api/err

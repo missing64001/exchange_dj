@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "F:\mygit\python\exchange_dj\index\api\api.py", line 53, in inn
+    data = fun(*args,**kw)
+  File "F:\mygit\python\exchange_dj\index\api\zb\zb_api.py", line 138, in trades
+    data = self.__api_public_call(method, params)
+  File "F:\mygit\python\exchange_dj\index\api\zb\zb_api.py", line 81, in __api_public_call
+    res = urllib.request.urlopen(req, timeout=10)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\urllib\request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\urllib\request.py", line 466, in open
+    response = self._open(req, data)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\urllib\request.py", line 484, in _open
+    '_open', req)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\urllib\request.py", line 444, in _call_chain
+    result = func(*args)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\urllib\request.py", line 1282, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\urllib\request.py", line 1257, in do_open
+    r = h.getresponse()
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\http\client.py", line 1197, in getresponse
+    response.begin()
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\http\client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\http\client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。

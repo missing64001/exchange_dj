@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "F:\mygit\python\exchange_dj\index\api\api.py", line 53, in inn
+    data = fun(*args,**kw)
+  File "F:\mygit\python\exchange_dj\index\api\zb\zb_api.py", line 138, in trades
+    data = self.__api_public_call(method, params)
+  File "F:\mygit\python\exchange_dj\index\api\zb\zb_api.py", line 81, in __api_public_call
+    res = urllib.request.urlopen(req, timeout=10)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\urllib\request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\urllib\request.py", line 472, in open
+    response = meth(req, response)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\urllib\request.py", line 582, in http_response
+    'http', request, response, code, msg, hdrs)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\urllib\request.py", line 510, in error
+    return self._call_chain(*args)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\urllib\request.py", line 444, in _call_chain
+    result = func(*args)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\urllib\request.py", line 590, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 502: Bad Gateway

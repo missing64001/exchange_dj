@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "F:\mygit\python\exchange_dj\index\api\api.py", line 48, in inn
+    data = fun(*args,**kw)
+  File "F:\mygit\python\exchange_dj\index\api\zb\zb_api.py", line 164, in depth
+    obj = [obj['asks'][::-1],obj['bids']]
+TypeError: 'NoneType' object is not subscriptable

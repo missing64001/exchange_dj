@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "F:\mygit\python\exchange_dj\index\api\api.py", line 49, in inn
+    data = fun(*args,**kw)
+  File "F:\mygit\python\exchange_dj\index\api\zb\zb_api.py", line 144, in trades
+    return [(da['tid'],market,da['date'],float(da['price']),float(da['amount']),da['type']) for da in data[::-1]]
+TypeError: unhashable type: 'slice'

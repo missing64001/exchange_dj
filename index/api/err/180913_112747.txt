@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "F:\mygit\python\exchange_dj\index\api\api.py", line 49, in inn
+    data = fun(*args,**kw)
+  File "F:\mygit\python\exchange_dj\index\api\hb\hb_api.py", line 84, in trades
+    data = data['data']
+TypeError: 'NoneType' object is not subscriptable

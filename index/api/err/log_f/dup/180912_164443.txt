@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "F:\mygit\python\exchange_dj\index\api\api.py", line 48, in inn
+    data = fun(*args,**kw)
+  File "F:\mygit\python\exchange_dj\index\api\ok\ok_api.py", line 87, in depth
+    data = self.okcoinSpot.depth(symbol)
+  File "F:\mygit\python\exchange_dj\index\api\ok\OkcoinSpotAPI.py", line 27, in depth
+    return httpGet(self.__url,DEPTH_RESOURCE,params)
+  File "F:\mygit\python\exchange_dj\index\api\ok\HttpMD5Util.py", line 20, in httpGet
+    conn.request("GET",resource + '?' + params)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\http\client.py", line 1106, in request
+    self._send_request(method, url, body, headers)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\http\client.py", line 1151, in _send_request
+    self.endheaders(body)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\http\client.py", line 1102, in endheaders
+    self._send_output(message_body)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\http\client.py", line 934, in _send_output
+    self.send(msg)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\http\client.py", line 877, in send
+    self.connect()
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\http\client.py", line 1252, in connect
+    super().connect()
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\http\client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\socket.py", line 693, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "C:\Users\vanlance\AppData\Local\Programs\Python\Python35\lib\socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
