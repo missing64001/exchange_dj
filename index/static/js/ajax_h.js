@@ -84,6 +84,26 @@ function set_data(json){
 
         }
 
+        else if (type == 'diff'){
+            var div = $('<div class="now">'+data[key][0]+'</div>')
+            var hul = $('<ul class="high"></ul>')
+            var lul = $('<ul class="low"></ul>')
+
+            $ex.append(div)
+            $ex.append(hul)
+            $ex.append(lul)
+
+            for(var i=0;i<data[key][1].length;i++){
+                var $li = $('<li><span class="ss1">'+data[key][1][i][0]+'</span><span class="ss2">'+data[key][1][i][1]+'</span><span class="ss">'+data[key][1][i][2]+'</span></li>')
+                hul.append($li)
+            }
+
+            for(var i=0;i<data[key][2].length;i++){
+                var $li = $('<li><span class="ss1">'+data[key][2][i][0]+'</span><span class="ss2">'+data[key][2][i][1]+'</span><span class="ss">'+data[key][2][i][2]+'</span></li>')
+                lul.append($li)
+            }
+        }
+
 
         // var $e = $ex()
         // console.log('#'+exchange+'_'+symbol);

@@ -41,18 +41,40 @@ def ajax_get_views(request,symbol):
 
 
     data = {}
+    
+    exchanges_last_trade = []
+
+
     for da in DATA.copy():
         if da.split()[1] not in SYMBOLS:
             del DATA[da]
         elif da.split()[1] == symbol:
             data[da] = DATA[da]
+            if da.split()[2] == 'trades':
+                exchanges_last_trade.append(['%s %s %s'%(da.split()[0] , da.split()[1],'diff'),data[da][0][0]])
+
+    exchanges_last_trade.sort(key=lambda x:x[1])
 
 
-     # time.strftime("%H:%M:%S", time.localtime())
+    for i in range(len(exchanges_last_trade)):
+        dat = [
+            exchanges_last_trade[i][1],
+            [   [da[0].split()[0],da[1] ,exchanges_last_trade[i][1] - da[1]]  for da in exchanges_last_trade[i+1:]],
+            [   [da[0].split()[0],da[1] ,exchanges_last_trade[i][1] - da[1]]  for da in exchanges_last_trade[:i] ],
+        ]
+        data[exchanges_last_trade[i][0]] = dat
+
+
+
+    # time.strftime("%H:%M:%S", time.localtime())
     res =  HttpResponse(json.dumps({'date':date,'data':data}), content_type="application/json")
     # print(len(DATA))
     # DATA = {}
     return res
+
+
+
+
 
 def depth_views(request,symbol='btc_usdt'):
     global Th

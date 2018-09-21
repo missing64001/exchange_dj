@@ -4,22 +4,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>EXCHANGE</title>
 
 
 
 
     <style type="text/css">
-
         span{
             font-size: 10px;
             overflow: hidden;
+            text-overflow:clip;
+
         }
         li{list-style: none;
         }
         ul,li{
             padding: 0px;
             margin: 0px;
+            float: left;
         }
 
         ul{
@@ -27,6 +29,70 @@
             margin: 10px 0px;
             height: 160px;
             overflow: auto;
+        }
+        div.diff{
+            float: left;
+            background: #fafafa;
+        }
+
+        div.now{
+            float: left;
+            width: 93px;
+            height: 80px;
+            font-size: 20px;
+            line-height: 80px;
+            color: red;
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+        ul.low,ul.high{
+            height: 40px;
+            width: 205px;
+            margin: 0px;
+            float: right;
+        }
+
+        ul.high li,ul.low li{
+            width: 200px;
+            margin-right: 0px;
+            padding-left: 5px;
+
+        }
+        ul.high li span.ss,ul.low li span.ss{
+            display: inline-block;
+            width: 49px;
+            margin-right: 5px;
+            padding: 0px;
+
+        }
+
+        ul.high li span.ss{
+            width: 46px;
+
+        }
+
+        ul.low{
+            color: #589065;
+
+        }
+
+        ul.high{
+            color: #ae4e54;
+
+        }
+        
+        ul.high li span.ss1,ul.low li span.ss1{
+            display: inline-block;
+            width: 20px;
+            margin-right: 10px;
+            padding: 0px;
+        }
+        ul.high li span.ss2,ul.low li span.ss2{
+            display: inline-block;
+            width: 66px;
+            margin-right: 5px;
+            padding: 0px;
         }
 
 /*        ul::-webkit-scrollbar    
@@ -93,7 +159,7 @@
 
     <form action="/market" method="get">
                 <input type="text" name="symbol" class="form-control">
-                <input type="submit" value="搜索" class="btnLogin">
+                <input type="submit" value="submit" class="btnLogin">
 
                 {%for sym in symbol_lst_show%}
                 <a href="/depth/{{sym}}" >{{sym}}</a>
@@ -103,37 +169,19 @@
     {% for title,da in data.items%}
         <div class='depth'>
             <h4>{{title}}</h4>
+
             <ul id="{{title}}" class="asks">
-                {% for ask in da.asks %}
-                <li>
-                    <span class="s1">{{ask.0}}</span>
-                    <span class="s1">{{ask.1}}</span>
-                </li>
-                {%endfor%}
             </ul>
+
+            <div id="{{title}}" class="diff">
+            </div>
+
             <ul id="{{title}}" class="bids">
-                {% for bid in da.bids %}
-                <li>
-                    <span class="s1">{{bid.0}}</span>
-                    <span>{{bid.1}}</span>
-                </li>
-                {%endfor%}
             </ul>
+
             <h4> trades</h4>
             <ul id="{{title}}" class="trades">
-                {% for trade in da.trades %}
-                <li style="color: {{trade.3}};">
-                    <span class="s1">{{trade.0}}</span>
-                    <span class="s1">{{trade.1}}</span>
-                    <span class="s2">{{trade.2}}</span>
-                    <span class="s3">{{trade.4}}</span>
-                </li>
-                {%endfor%}
             </ul>
-
-            
-
-
 
         </div>
     {%endfor%}
