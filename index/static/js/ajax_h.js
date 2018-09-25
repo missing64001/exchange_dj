@@ -55,7 +55,7 @@ function set_data(json){
         // console.log(data[key].length)
         if (type == 'asks'){
             for(var i=0;i<data[key].length;i++){
-                var $li = $('<li><span class="s1">'+data[key][i][0]+'</span><span class="s1">'+data[key][i][1]+'</span></li>')
+                var $li = $('<li><span class="s0">'+data[key][i][0].toFixed(4)+'</span><span class="s1">'+data[key][i][1].toFixed(4)+'</span></li>')
                 $ex.append($li)
             }
             $ex[0].scrollTop = $ex[0].scrollHeight
@@ -64,7 +64,7 @@ function set_data(json){
 
         else if (type == 'bids'){
             for(var i=0;i<data[key].length;i++){
-                var $li = $('<li><span class="s1">'+data[key][i][0]+'</span><span class="s1">'+data[key][i][1]+'</span></li>')
+                var $li = $('<li><span class="s0">'+data[key][i][0].toFixed(4)+'</span><span class="s1">'+data[key][i][1].toFixed(4)+'</span></li>')
                 $ex.append($li)
             }
         }
@@ -73,8 +73,8 @@ function set_data(json){
             for(var i=0;i<data[key].length;i++){
                 var $li = $(
                 '<li style="color: '+data[key][i][3]+';">\
-                    <span class="s1">'+data[key][i][0]+'</span>\
-                    <span class="s1">'+data[key][i][1]+'</span>\
+                    <span class="s0">'+data[key][i][0].toFixed(4)+'</span>\
+                    <span class="s1">'+data[key][i][1].toFixed(4)+'</span>\
                     <span class="s2">'+data[key][i][2]+'</span>\
                     <span class="s3">'+data[key][i][4]+'</span>\
                 </li>')
@@ -94,12 +94,12 @@ function set_data(json){
             $ex.append(lul)
 
             for(var i=0;i<data[key][1].length;i++){
-                var $li = $('<li><span class="ss1">'+data[key][1][i][0]+'</span><span class="ss2">'+data[key][1][i][1]+'</span><span class="ss">'+data[key][1][i][2]+'</span></li>')
+                var $li = $('<li><span class="ss1">'+data[key][1][i][0]+'</span><span class="ss2">'+data[key][1][i][1].toFixed(4)+'</span><span class="ss">'+data[key][1][i][2].toFixed(2)+ '‰</span></li>')
                 hul.append($li)
             }
 
             for(var i=0;i<data[key][2].length;i++){
-                var $li = $('<li><span class="ss1">'+data[key][2][i][0]+'</span><span class="ss2">'+data[key][2][i][1]+'</span><span class="ss">'+data[key][2][i][2]+'</span></li>')
+                var $li = $('<li><span class="ss1">'+data[key][2][i][0]+'</span><span class="ss2">'+data[key][2][i][1].toFixed(4)+'</span><span class="ss">'+data[key][2][i][2].toFixed(2)+ '‰</span></li>')
                 lul.append($li)
             }
         }

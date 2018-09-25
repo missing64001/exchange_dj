@@ -59,8 +59,10 @@ def ajax_get_views(request,symbol):
     for i in range(len(exchanges_last_trade)):
         dat = [
             exchanges_last_trade[i][1],
-            [   [da[0].split()[0],da[1] ,exchanges_last_trade[i][1] - da[1]]  for da in exchanges_last_trade[i+1:]],
-            [   [da[0].split()[0],da[1] ,exchanges_last_trade[i][1] - da[1]]  for da in exchanges_last_trade[:i] ],
+            # [   [da[0].split()[0],da[1] ,exchanges_last_trade[i][1] - da[1]]  for da in exchanges_last_trade[i+1:]],
+            # [   [da[0].split()[0],da[1] ,exchanges_last_trade[i][1] - da[1]]  for da in exchanges_last_trade[:i] ],
+            [   [da[0].split()[0] ,exchanges_last_trade[i][1] - da[1] ,(exchanges_last_trade[i][1] - da[1])/da[1]*1000] for da in exchanges_last_trade[i+1:]],
+            [   [da[0].split()[0] ,exchanges_last_trade[i][1] - da[1] ,(exchanges_last_trade[i][1] - da[1])/da[1]*1000]  for da in exchanges_last_trade[:i] ],
         ]
         data[exchanges_last_trade[i][0]] = dat
 
