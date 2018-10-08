@@ -6,7 +6,7 @@ from pprint import pprint
 import sys 
 import os
 # sys.path.insert(1,os.path.abspath(os.path.dirname(__file__)+'\\..'))
-from .import_myfn import deal_e
+# from .import_myfn import deal_e
 from socket import timeout
 from requests.exceptions import ReadTimeout,ConnectionError,ConnectTimeout
 
@@ -58,7 +58,7 @@ def dec(fun):
             print('none data')
             data = None
         except Exception:
-            deal_e()
+            # deal_e()
             data = None
         return data
     return inn
