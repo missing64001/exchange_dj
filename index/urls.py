@@ -6,6 +6,7 @@ urlpatterns = [
     # url(r'^02_child/$', child_views),
     url(r'^market/$', market_views),
     url(r'^$', depth_views),
+    url(r'^admin', depth_views),
     url(r'^depth/$', depth_views),
     url(r'^ajax_get/([_a-zA-Z0-9]+)/$', ajax_get_views),
     url(r'^depth/([_a-zA-Z0-9]+)/$', depth_views),
